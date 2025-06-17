@@ -2,11 +2,11 @@
 	type Props = {
 		value?: string;
 		placeholder?: string;
-		type?: 'text' | 'password' | 'email' | 'search' | 'number';
+		type?: 'text' | 'password' | 'email' | 'search' | 'number' | 'tel' | 'url';
 		disabled?: boolean;
 	};
 
-	let { value = '', placeholder = '', type = 'text', disabled = false }: Props = $props();
+	let { value = $bindable(''), placeholder = '', type = 'text', disabled = false }: Props = $props();
 </script>
 
 <input {value} {placeholder} {type} {disabled} class="ui-input" />
@@ -19,8 +19,17 @@
 		font-size: 1em;
 		outline: none;
 		transition: border 0.2s;
+		background: #fff;
+		color: #222;
 	}
 	.ui-input:focus {
 		border-color: #0070f3;
+	}
+	.ui-input[disabled] {
+		background: #f3f3f3;
+		color: #aaa;
+		border-color: #e0e0e0;
+		cursor: not-allowed;
+		opacity: 0.7;
 	}
 </style>

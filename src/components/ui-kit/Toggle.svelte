@@ -5,11 +5,11 @@
 		label?: string;
 	};
 
-	let { checked = false, disabled = false, label = '' }: Props = $props();
+	let { checked = $bindable(false), disabled = false, label = '' }: Props = $props();
 </script>
 
 <label class="ui-toggle">
-	<input type="checkbox" {checked} {disabled} />
+	<input type="checkbox" bind:checked {disabled} />
 	<span class="slider"></span>
 	<span class="toggle-label">{label}</span>
 </label>
