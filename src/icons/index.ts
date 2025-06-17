@@ -1,0 +1,11 @@
+export { default as UserIcon } from './User.svelte';
+export { default as EmailIcon } from './Email.svelte';
+export { default as PhoneIcon } from './Phone.svelte';
+export { default as LocationIcon } from './Location.svelte';
+export { default as CityIcon } from './City.svelte';
+export { default as CountryIcon } from './Country.svelte';
+export { default as CompanyIcon } from './Company.svelte';
+export { default as JobIcon } from './Job.svelte';
+export { default as WebsiteIcon } from './Website.svelte';
+export { default as NotesIcon } from './Notes.svelte';
+export { default as TermsIcon } from './Terms.svelte';

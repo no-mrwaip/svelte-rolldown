@@ -3,16 +3,18 @@
   import Toggle from '../components/ui-kit/Toggle.svelte';
   import Button from '../components/ui-kit/Button.svelte';
   import WeatherWidget from '../components/WeatherWidget.svelte';
-  import UserIcon from '../icons/User.svelte';
-  import EmailIcon from '../icons/Email.svelte';
-  import PhoneIcon from '../icons/Phone.svelte';
-  import LocationIcon from '../icons/Location.svelte';
-  import CityIcon from '../icons/City.svelte';
-  import CountryIcon from '../icons/Country.svelte';
-  import CompanyIcon from '../icons/Company.svelte';
-  import JobIcon from '../icons/Job.svelte';
-  import WebsiteIcon from '../icons/Website.svelte';
-  import NotesIcon from '../icons/Notes.svelte';
+  import {
+    UserIcon,
+    EmailIcon,
+    PhoneIcon,
+    LocationIcon,
+    CityIcon,
+    CountryIcon,
+    CompanyIcon,
+    JobIcon,
+    WebsiteIcon,
+    NotesIcon
+  } from '../icons';
 
   let form = $state({
     name: '',
