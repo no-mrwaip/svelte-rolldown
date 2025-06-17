@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { fly, fade, slide } from 'svelte/transition';
+	import { fly, slide } from 'svelte/transition';
 	type Weather = { temp: number; desc: string; city: string };
 	let weather = $state<Weather | null | undefined>(undefined);
 

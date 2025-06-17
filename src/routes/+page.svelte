@@ -3,6 +3,16 @@
   import Toggle from '../components/ui-kit/Toggle.svelte';
   import Button from '../components/ui-kit/Button.svelte';
   import WeatherWidget from '../components/WeatherWidget.svelte';
+  import UserIcon from '../icons/User.svelte';
+  import EmailIcon from '../icons/Email.svelte';
+  import PhoneIcon from '../icons/Phone.svelte';
+  import LocationIcon from '../icons/Location.svelte';
+  import CityIcon from '../icons/City.svelte';
+  import CountryIcon from '../icons/Country.svelte';
+  import CompanyIcon from '../icons/Company.svelte';
+  import JobIcon from '../icons/Job.svelte';
+  import WebsiteIcon from '../icons/Website.svelte';
+  import NotesIcon from '../icons/Notes.svelte';
 
   let form = $state({
     name: '',
@@ -25,24 +35,24 @@
   <h1>Generic Form Example</h1>
   <form class="generic-form" autocomplete="off">
     <div class="form-row">
-      <Input value={form.name} placeholder="Name" />
-      <Input value={form.email} placeholder="Email" type="email" />
+      <Input value={form.name} placeholder="Name" icon={UserIcon} />
+      <Input value={form.email} placeholder="Email" type="email" icon={EmailIcon} />
     </div>
     <div class="form-row">
-      <Input value={form.phone} placeholder="Phone" type="tel" />
-      <Input value={form.address} placeholder="Address" />
+      <Input value={form.phone} placeholder="Phone" type="tel" icon={PhoneIcon} />
+      <Input value={form.address} placeholder="Address" icon={LocationIcon} />
     </div>
     <div class="form-row">
-      <Input value={form.city} placeholder="City" />
-      <Input value={form.country} placeholder="Country" />
+      <Input value={form.city} placeholder="City" icon={CityIcon} />
+      <Input value={form.country} placeholder="Country" icon={CountryIcon} />
     </div>
     <div class="form-row">
-      <Input value={form.company} placeholder="Company" disabled={!form.agree} />
-      <Input value={form.job} placeholder="Job Title" disabled={!form.agree} />
+      <Input value={form.company} placeholder="Company" disabled={!form.agree} icon={CompanyIcon} />
+      <Input value={form.job} placeholder="Job Title" disabled={!form.agree} icon={JobIcon} />
     </div>
     <div class="form-row">
-      <Input value={form.website} placeholder="Website" type="url" disabled={!form.subscribe} />
-      <Input value={form.notes} placeholder="Notes" disabled={!form.updates} />
+      <Input value={form.website} placeholder="Website" type="url" disabled={!form.subscribe} icon={WebsiteIcon} />
+      <Input value={form.notes} placeholder="Notes" disabled={!form.updates} icon={NotesIcon} />
     </div>
     <div class="checkbox-row">
       <Toggle bind:checked={form.agree} label="I agree to the terms" />
