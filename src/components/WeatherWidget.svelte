@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { fly, fade, slide } from 'svelte/transition';
 	type Weather = { temp: number; desc: string; city: string };
-	let weather = $state<Weather | null>(null);
+	let weather = $state<Weather | null | undefined>(undefined);
 
 	let loading = $state(true);
 	let error = $state('');
@@ -10,7 +11,10 @@
 
 	onMount(async () => {
 		try {
-			// Use Open-Meteo as a free alternative (no key required)
+			weather = null; // Reset weather state before fetching
+
+			await new Promise((resolve) => setTimeout(resolve, 1000));
+
 			const res = await fetch(
 				`https://api.open-meteo.com/v1/forecast?latitude=51.5072&longitude=-0.1276&current_weather=true`
 			);
@@ -31,19 +35,25 @@
 	});
 </script>
 
-<div class="weather-widget">
-	{#if loading}
-		<div class="weather-loading">Loading weather...</div>
-	{:else if error}
-		<div class="weather-error">{error}</div>
-	{:else if weather}
-		<div class="weather-main">
-			<div class="weather-city">{weather.city}</div>
-			<div class="weather-temp">{weather.temp}°C</div>
-			<div class="weather-desc">{weather.desc}</div>
-		</div>
-	{/if}
-</div>
+{#if weather !== undefined}
+	<div class="weather-widget" in:fly={{ y: 100, duration: 400 }}>
+		{#if loading}
+			<div class="weather-main">
+				<div class="weather-loading">Loading weather...</div>
+			</div>
+		{:else if error}
+			<div class="weather-main">
+				<div class="weather-error">{error}</div>
+			</div>
+		{:else if weather}
+			<div class="weather-main" in:slide={{ duration: 400 }}>
+				<div class="weather-city">{weather.city}</div>
+				<div class="weather-temp">{weather.temp}°C</div>
+				<div class="weather-desc">{weather.desc}</div>
+			</div>
+		{/if}
+	</div>
+{/if}
 
 <style>
 	.weather-widget {
@@ -62,6 +72,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		min-width: 200px;
 	}
 	.weather-main {
 		display: flex;
