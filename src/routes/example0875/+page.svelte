@@ -43,7 +43,7 @@
 	<section class="city-section">
 		<h2>Featured City</h2>
 		<div class="city-card">
-			<svelte:component this={randomCity.icon} />
+			<randomCity.icon />
 			<div>
 				<strong>{randomCity.name}</strong>
 				<p><Country /> {randomCity.country}</p>

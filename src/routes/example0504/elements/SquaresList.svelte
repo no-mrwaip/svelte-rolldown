@@ -1,6 +1,6 @@
 <script>
-	let n = 5;
-	$: squares = Array.from({ length: n }, (_, i) => (i + 1) * (i + 1));
+	let n = $state(5);
+	let squares = $derived(Array.from({ length: n }, (_, i) => (i + 1) * (i + 1)));
 </script>
 
 <input type="range" min="1" max="10" bind:value={n} />

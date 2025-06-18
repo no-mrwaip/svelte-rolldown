@@ -1,5 +1,5 @@
 <script>
-	let count = 0;
+	let count = $state(0);
 </script>
 
-<button on:click={() => count++}>Clicked {count} times</button>
+<button onclick={() => count++}>Clicked {count} times</button>

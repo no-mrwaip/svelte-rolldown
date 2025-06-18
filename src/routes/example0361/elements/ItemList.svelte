@@ -1,5 +1,5 @@
-<script>
-	export let items = [1, 2, 3, 4, 5];
+<script lang="ts">
+	let { items = [1, 2, 3, 4, 5] } = $props();
 </script>
 
 <ul>

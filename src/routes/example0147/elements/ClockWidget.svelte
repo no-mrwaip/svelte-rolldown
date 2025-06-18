@@ -1,6 +1,10 @@
 <script>
-	let now = new Date().toLocaleTimeString();
-	$: now = new Date().toLocaleTimeString();
+	import { run } from 'svelte/legacy';
+
+	let now = $state(new Date().toLocaleTimeString());
+	run(() => {
+		now = new Date().toLocaleTimeString();
+	});
 </script>
 
 <div class="clock">Current time: {now}</div>

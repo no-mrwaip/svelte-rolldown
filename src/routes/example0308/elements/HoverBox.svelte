@@ -1,10 +1,10 @@
 <script>
-	let hovered = false;
+	let hovered = $state(false);
 </script>
 
 <div
-	on:mouseenter={() => (hovered = true)}
-	on:mouseleave={() => (hovered = false)}
+	onmouseenter={() => (hovered = true)}
+	onmouseleave={() => (hovered = false)}
 	style="padding:1em;border:1px solid #ddd;border-radius:8px;width:fit-content;"
 >
 	{#if hovered}

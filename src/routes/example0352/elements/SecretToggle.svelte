@@ -1,8 +1,8 @@
 <script>
-	let show = false;
+	let show = $state(false);
 </script>
 
-<button on:click={() => (show = !show)}>{show ? 'Hide' : 'Show'} Secret</button>
+<button onclick={() => (show = !show)}>{show ? 'Hide' : 'Show'} Secret</button>
 {#if show}
 	<p class="secret">🎉 This is a secret message!</p>
 {/if}

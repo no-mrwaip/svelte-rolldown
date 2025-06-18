@@ -1,10 +1,10 @@
 <script>
-	let visible = true;
+	let visible = $state(true);
 </script>
 
 {#if visible}
 	<p>This can be dismissed.</p>
-	<button on:click={() => (visible = false)}>Dismiss</button>
+	<button onclick={() => (visible = false)}>Dismiss</button>
 {:else}
-	<button on:click={() => (visible = true)}>Show Again</button>
+	<button onclick={() => (visible = true)}>Show Again</button>
 {/if}
