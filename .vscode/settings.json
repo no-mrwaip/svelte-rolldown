@@ -1,0 +1,4 @@
+{
+	"typescript.tsserver.maxTsServerMemory": 8192,
+	"svelte.language-server.runtime-args": ["--max-old-space-size=8192"]
+}
