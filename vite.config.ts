@@ -9,5 +9,8 @@ const debugPlugin: Plugin = {
 };
 
 export default defineConfig({
-	plugins: [sveltekit(), debugPlugin]
+	plugins: [sveltekit(), debugPlugin],
+	build: {
+		reportCompressedSize: false
+	}
 });
