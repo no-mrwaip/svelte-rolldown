@@ -1,5 +1,5 @@
 <script>
-	let color = 'red';
+	let color = $state('red');
 </script>
 
 <select bind:value={color}>
