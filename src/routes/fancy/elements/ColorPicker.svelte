@@ -1,18 +1,18 @@
-<script>
+<script lang="ts">
 	import { PlayingCard } from 'odd-components';
 
-	/** @type {PlayingCard['$$prop_def']['card'][]} */
-	let my_deck = [];
+	type Suite = 'SPADES' | 'HEARTS' | 'DIAMONDS' | 'CLUBS';
+	type CardValue = '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | 'J' | 'Q' | 'K' | 'A';
+	type Card = {
+		suit: Suite;
+		value: CardValue;
+	};
 
-	/** @type PlayingCard['$$prop_def']['card']['suit'][] */
-	const suits = ['CLUBS', 'SPADES', 'HEARTS', 'DIAMONDS'];
-	/** @type PlayingCard['$$prop_def']['card']['value'][] */
-	const values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+	const suits: Suite[] = ['CLUBS', 'SPADES', 'HEARTS', 'DIAMONDS'];
+	const values: CardValue[] = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 
-	/** @param {number} size */
-	const deckMaker = (size) => {
-		/** @type typeof my_deck*/
-		let deck = [];
+	const deckMaker = (size: number): Card[] => {
+		let deck: Card[] = [];
 		let suitIdx, valueIdx;
 
 		for (let i = 0; i < size; i++) {
@@ -21,11 +21,23 @@
 
 			deck.push({ value: values[valueIdx], suit: suits[suitIdx] });
 		}
+
 		return deck;
 	};
 
-	my_deck = deckMaker(99);
+	let my_deck = deckMaker(66);
+
+	const handleScroll = () => {
+		const main = document.querySelector('.main')!;
+		const cards = document.querySelector('.cards')! as HTMLDivElement;
+
+		const mainRect = main.getBoundingClientRect();
+		const offset = window.scrollY - mainRect.top;
+		cards.style.transform = `translateY(${-offset * 0.05}px)`;
+	};
 </script>
+
+<svelte:window on:scroll={handleScroll} />
 
 <div class="main">
 	<div class="cover"></div>
@@ -44,6 +56,9 @@
 		width: 100%;
 		position: relative;
 		overflow: hidden;
+		scroll-behavior: smooth;
+		display: flex;
+		justify-content: center;
 	}
 	.cover {
 		width: 100%;
@@ -55,14 +70,14 @@
 		mix-blend-mode: hue;
 	}
 	.cards {
+		display: grid;
+		grid-auto-flow: row;
+		grid-template-columns: repeat(10, 1fr);
+		gap: 5px;
 		position: relative;
-		transform-style: preserve-3d;
-		perspective: 1000px;
 	}
+
 	.card-wrapper {
-		display: inline-block;
-		margin: 5px;
-		transform: translateZ(calc(var(--depth, 0) * -10px));
 		will-change: transform;
 	}
 </style>
