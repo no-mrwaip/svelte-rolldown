@@ -1,16 +1,19 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
+
 	type Props = {
-		label?: string;
 		disabled?: boolean;
 		type?: 'button' | 'submit' | 'reset';
 		theme?: 'primary' | 'negative';
+		onclick?: () => void;
+		children?: Snippet;
 	};
 
-	let { label = '', disabled = false, type = 'button', theme = 'primary' }: Props = $props();
+	let { children, disabled = false, onclick, type = 'button', theme = 'primary' }: Props = $props();
 </script>
 
-<button {type} {disabled} class="ui-button {theme}">
-	{label}
+<button {type} {disabled} class="ui-button {theme}" {onclick}>
+	{@render children?.()}
 </button>
 
 <style>

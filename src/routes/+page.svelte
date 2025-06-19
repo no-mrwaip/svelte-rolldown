@@ -68,8 +68,8 @@
 			<Toggle bind:checked={form.updates} label="Receive updates" />
 		</div>
 		<div class="form-actions">
-			<Button label="Accept" type="submit" />
-			<Button label="Decline" theme="negative" type="button" />
+			<Button type="submit">Accept</Button>
+			<Button theme="negative" type="button">Decline</Button>
 		</div>
 	</form>
 	<WeatherWidget />

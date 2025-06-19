@@ -42,11 +42,13 @@
 
 	<section class="city-section">
 		<h2>Featured City</h2>
-		<div class="city-card">
-			<randomCity.icon />
-			<div>
-				<strong>{randomCity.name}</strong>
-				<p><Country /> {randomCity.country}</p>
+		<div class="city-card-new">
+			<div class="city-image">
+				<randomCity.icon />
+			</div>
+			<div class="city-info">
+				<h3 class="city-name">{randomCity.name}</h3>
+				<p class="city-country"><Country /> {randomCity.country}</p>
 			</div>
 		</div>
 	</section>
@@ -109,22 +111,34 @@
 
 <style>
 	.fancy-main {
-		font-family: Arial, sans-serif;
-		max-width: 800px;
+		font-family: 'Roboto', sans-serif;
+		max-width: 900px;
 		margin: 0 auto;
 		padding: 20px;
+		background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+		border-radius: 10px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 	}
 
 	.quote-section {
-		background: #f9f9f9;
+		background: #ffffff;
 		padding: 20px;
 		border-left: 5px solid #007acc;
 		margin-bottom: 20px;
+		border-radius: 5px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		font-style: italic;
+		color: #333;
 	}
 
 	.gallery {
 		display: flex;
-		overflow-x: scroll;
+		overflow-x: auto;
+		gap: 10px;
+		padding: 10px;
+		background: #f0f4f8;
+		border-radius: 5px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 	}
 
 	.city-section,
@@ -135,18 +149,59 @@
 		margin-bottom: 40px;
 	}
 
-	.city-card {
-		display: flex;
+	.city-card-new {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
 		align-items: center;
-		background: #fff;
-		padding: 10px;
+		background: #ffffff;
+		padding: 20px;
 		border: 1px solid #ddd;
-		border-radius: 5px;
+		border-radius: 10px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
+	}
+	.city-card-new:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+	}
+
+	.city-image {
+		width: 100px;
+		height: 100px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #f0f4f8;
+		border-radius: 50%;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.city-info {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.city-name {
+		font-size: 1.5rem;
+		font-weight: bold;
+		color: #333;
+	}
+
+	.city-country {
+		font-size: 1rem;
+		color: #555;
 	}
 
 	.widgets-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-		gap: 10px;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		gap: 20px;
+		padding: 20px;
+		background: #ffffff;
+		border-radius: 10px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 	}
 </style>

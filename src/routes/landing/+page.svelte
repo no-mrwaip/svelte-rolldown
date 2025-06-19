@@ -21,7 +21,7 @@
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu
 		consectetur.
 	</p>
-	<Button label="Get Started" />
+	<Button>Get Started</Button>
 </section>
 
 <section id="features" class="section">
