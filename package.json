@@ -34,6 +34,7 @@
 		"svelte": "5.34.7"
 	},
 	"dependencies": {
-		"odd-components": "0.0.15"
+		"odd-components": "0.0.15",
+		"tippy.js": "^6.3.7"
 	}
 }
