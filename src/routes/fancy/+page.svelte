@@ -1415,12 +1415,6 @@
 		border-radius: 5px;
 	}
 
-	.city-card svelte:component {
-		width: 50px;
-		height: 50px;
-		margin-right: 10px;
-	}
-
 	.widgets-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));

@@ -101,6 +101,7 @@
 			<Link href="#">Careers</Link>
 		</nav>
 		<div class="footer-social">
+			<!-- svelte-ignore a11y_invalid_attribute -->
 			<a href="#" aria-label="Twitter" class="footer-social-link"
 				><svg width="22" height="22" fill="none" viewBox="0 0 24 24"
 					><path
@@ -109,6 +110,7 @@
 					/></svg
 				></a
 			>
+			<!-- svelte-ignore a11y_invalid_attribute -->
 			<a href="#" aria-label="GitHub" class="footer-social-link"
 				><svg width="22" height="22" fill="none" viewBox="0 0 24 24"
 					><path
@@ -117,6 +119,7 @@
 					/></svg
 				></a
 			>
+			<!-- svelte-ignore a11y_invalid_attribute -->
 			<a href="#" aria-label="LinkedIn" class="footer-social-link"
 				><svg width="22" height="22" fill="none" viewBox="0 0 24 24"
 					><path
@@ -223,9 +226,7 @@
 		font-size: 1em;
 		margin-bottom: 1em;
 	}
-	.card .ui-link {
-		margin-top: auto;
-	}
+
 	.about-content {
 		display: flex;
 		gap: 2em;
