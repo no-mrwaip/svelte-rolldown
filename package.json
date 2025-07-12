@@ -14,24 +14,24 @@
 		"lint": "prettier --check . && eslint ."
 	},
 	"devDependencies": {
-		"@eslint/compat": "1.3.0",
-		"@eslint/js": "9.29.0",
-		"@sveltejs/adapter-node": "https://pkg.pr.new/sveltejs/kit/@sveltejs/adapter-node@13747",
-		"@sveltejs/kit": "https://pkg.pr.new/sveltejs/kit/@sveltejs/kit@13747",
-		"eslint": "9.29.0",
+		"@eslint/compat": "1.3.1",
+		"@eslint/js": "9.31.0",
+		"@sveltejs/adapter-node": "5.2.13",
+		"@sveltejs/kit": "2.22.5",
+		"eslint": "9.31.0",
 		"eslint-config-prettier": "10.1.5",
-		"eslint-plugin-svelte": "3.9.2",
-		"globals": "16.2.0",
-		"prettier": "3.5.3",
+		"eslint-plugin-svelte": "3.10.1",
+		"globals": "16.3.0",
+		"prettier": "3.6.2",
 		"prettier-plugin-svelte": "3.4.0",
-		"svelte": "5.34.7",
+		"svelte": "5.35.6",
 		"svelte-check": "4.2.2",
 		"typescript": "5.8.3",
-		"typescript-eslint": "8.34.1",
+		"typescript-eslint": "8.36.0",
 		"vite": "npm:rolldown-vite@latest"
 	},
 	"overrides": {
-		"svelte": "5.34.7"
+		"svelte": "5.35.6"
 	},
 	"dependencies": {
 		"odd-components": "0.0.15",
